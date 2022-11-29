@@ -66,13 +66,7 @@ const loginUser = asyncHandler(async (req, res) => {
 
 
 const getMe = asyncHandler(async (req, res) => {
-
-    const user = await User.create({
-        name: req.body.name,
-        email: req.body.email,
-        password: req.body.password,
-    })
-    res.status(200).json({user})
+    res.status(200).json(req.user)
 })
 
 const generateToken = (id) => {
